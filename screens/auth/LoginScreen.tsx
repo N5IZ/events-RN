@@ -12,6 +12,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { AuthStackParamList } from "../../types";
 import Logo from "../../assets/images/icon.png";
 import CustomInput from "../../components/CustomInput";
+import CustomButtonBig from "../../components/CustomButtonBig";
 
 const LoginScreen = () => {
   const [accessToken, setAccessToken] = useState<String>();
@@ -30,21 +31,37 @@ const LoginScreen = () => {
         style={[styles.logo, { height: height * 0.3 }]}
         resizeMode="contain"
       />
+      {/* <CustomInput
+        value={username}
+        setValue={setUsername}
+        placeholder="Enter your Email Address"
+        secureTextEntry={false}
+        inputText="Email "
+        icon="face-man-profile"
+      /> */}
       <CustomInput
         value={username}
         setValue={setUsername}
-        placeholder="username"
+        placeholder="Enter your Email Address"
         secureTextEntry={false}
+        inputText="Email "
+        icon="email-outline"
       />
       <CustomInput
         value={password}
         setValue={setPassword}
-        placeholder="password"
+        placeholder="Enter your password"
         secureTextEntry
+        inputText="Password"
+        icon="key-outline"
       />
-      <Button title="Login" onPress={_handleLogin} />
-      <TouchableHighlight onPress={() => navigation.navigate("Register")}>
+      <CustomButtonBig title="Login" onPress={_handleLogin} />
+      <TouchableHighlight
+        onPress={() => navigation.navigate("Register")}
+        // style={{ flexDirection: "row" }}
+      >
         <Text>Dont have an Account</Text>
+        <Text>Register</Text>
       </TouchableHighlight>
     </View>
   );
@@ -54,7 +71,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
+    paddingBottom: "20%",
+    paddingTop: "10%",
   },
   title: {
     fontSize: 20,
