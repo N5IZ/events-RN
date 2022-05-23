@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+import { FirebaseApp, initializeApp } from "firebase/app";
+import { getAuth, Auth } from "firebase/auth";
 import Constants from "expo-constants";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -13,6 +14,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+let app: FirebaseApp = initializeApp(firebaseConfig);
+export let auth: Auth = getAuth(app);
 
 export default app;
