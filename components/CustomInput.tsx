@@ -1,7 +1,16 @@
-import { StyleSheet, TextInput } from "react-native";
+import { StyleSheet, TextInput, TextInputProps } from "react-native";
 import { View, Text } from "./Themed";
 import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+
+interface CustomInputProps extends TextInputProps {
+  setValue?:
+    | React.Dispatch<React.SetStateAction<String | undefined>>
+    | ((text: string) => void)
+    | undefined;
+  inputText: String;
+  icon: any;
+}
 
 const CustomInput = ({
   value,
@@ -10,7 +19,7 @@ const CustomInput = ({
   secureTextEntry,
   inputText,
   icon,
-}) => {
+}: CustomInputProps) => {
   return (
     <View style={styles.container}>
       <Text style={styles.inputText}>{inputText}</Text>

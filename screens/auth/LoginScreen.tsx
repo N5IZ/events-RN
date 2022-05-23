@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import {
   Button,
   Image,
+  ScrollView,
   StyleSheet,
   TouchableHighlight,
   useWindowDimensions,
@@ -16,8 +17,9 @@ import CustomButtonBig from "../../components/CustomButtonBig";
 
 const LoginScreen = () => {
   const [accessToken, setAccessToken] = useState<String>();
-  const [username, setUsername] = useState<String | undefined>();
-  const [password, setPassword] = useState<String | undefined>();
+  const [email, setEmail] = useState<string | undefined>();
+  const [username, setUsername] = useState<string | undefined>();
+  const [password, setPassword] = useState<string | undefined>();
   const { height } = useWindowDimensions();
   const navigation =
     useNavigation<NativeStackNavigationProp<AuthStackParamList>>();
@@ -25,45 +27,38 @@ const LoginScreen = () => {
   const _handleLogin = () => {};
 
   return (
-    <View style={styles.container}>
-      <Image
-        source={Logo}
-        style={[styles.logo, { height: height * 0.3 }]}
-        resizeMode="contain"
-      />
-      {/* <CustomInput
-        value={username}
-        setValue={setUsername}
-        placeholder="Enter your Email Address"
-        secureTextEntry={false}
-        inputText="Email "
-        icon="face-man-profile"
-      /> */}
-      <CustomInput
-        value={username}
-        setValue={setUsername}
-        placeholder="Enter your Email Address"
-        secureTextEntry={false}
-        inputText="Email "
-        icon="email-outline"
-      />
-      <CustomInput
-        value={password}
-        setValue={setPassword}
-        placeholder="Enter your password"
-        secureTextEntry
-        inputText="Password"
-        icon="key-outline"
-      />
-      <CustomButtonBig title="Login" onPress={_handleLogin} />
-      <TouchableHighlight
-        onPress={() => navigation.navigate("Register")}
-        // style={{ flexDirection: "row" }}
-      >
-        <Text>Dont have an Account</Text>
-        <Text>Register</Text>
-      </TouchableHighlight>
-    </View>
+    <ScrollView>
+      <View style={styles.container}>
+        <Image
+          source={Logo}
+          style={[styles.logo, { height: height * 0.3 }]}
+          resizeMode="contain"
+        />
+        <CustomInput
+          value={email}
+          setValue={setEmail}
+          placeholder="Enter your Email Address"
+          inputText="Email "
+          icon="email-outline"
+        />
+        <CustomInput
+          value={password}
+          setValue={setPassword}
+          placeholder="Enter your password"
+          secureTextEntry
+          inputText="Password"
+          icon="key-outline"
+        />
+        <CustomButtonBig title="Login" onPress={_handleLogin} />
+        <TouchableHighlight
+          onPress={() => navigation.navigate("Register")}
+          // style={{ flexDirection: "row" }}
+        >
+          <Text>Dont have an Account</Text>
+          <Text>Register</Text>
+        </TouchableHighlight>
+      </View>
+    </ScrollView>
   );
 };
 

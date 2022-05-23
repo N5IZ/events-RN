@@ -1,12 +1,19 @@
-import { StyleSheet } from "react-native";
-import { Text, View } from "./Themed";
+import { GestureResponderEvent, Pressable, StyleSheet } from "react-native";
+import { Text } from "./Themed";
+import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 
-const CustomButtonBig = ({ title }) => {
+interface CustomBtnBigProps {
+  title: string;
+  onPress: ((event: GestureResponderEvent) => void) | undefined;
+}
+const CustomButtonBig = ({ title, onPress }: CustomBtnBigProps) => {
   return (
-    <View style={styles.button}>
-      <Text style={styles.btnText}>{title}</Text>
-    </View>
+    <Pressable onPress={onPress}>
+      <LinearGradient style={styles.button} colors={["#CC23B6", "#B615DE"]}>
+        <Text style={styles.btnText}>{title}</Text>
+      </LinearGradient>
+    </Pressable>
   );
 };
 
@@ -14,7 +21,6 @@ export default CustomButtonBig;
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "#CC23B6",
     borderRadius: 10,
     width: "80%",
     alignItems: "center",
