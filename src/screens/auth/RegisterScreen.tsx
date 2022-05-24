@@ -3,6 +3,7 @@ import {
   ScrollView,
   StyleSheet,
   TouchableHighlight,
+  TouchableOpacity,
   useWindowDimensions,
 } from "react-native";
 import { Text, View } from "../../components/Themed";
@@ -23,46 +24,48 @@ const RegisterScreen = () => {
     useNavigation<NativeStackNavigationProp<AuthStackParamList>>();
 
   const _handleRegister = () => {
-    // GoogleAuthProvider.
+    // GoogleSignIn.
   };
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Image
-          source={Logo}
-          style={[styles.logo, { height: height * 0.3 }]}
-          resizeMode="contain"
-        />
-        <CustomInput
-          value={username}
-          setValue={setUsername}
-          placeholder="Enter your Email Address"
-          inputText="Email "
-          icon="face-man-profile"
-        />
-        <CustomInput
-          value={email}
-          setValue={setEmail}
-          placeholder="Enter your Email Address"
-          inputText="Email "
-          icon="email-outline"
-        />
-        <CustomInput
-          value={password}
-          setValue={setPassword}
-          placeholder="Enter your password"
-          secureTextEntry
-          inputText="Password"
-          icon="key-outline"
-        />
-        <CustomButtonBig title="Login" onPress={_handleRegister} />
-        <TouchableHighlight
-          onPress={() => navigation.navigate("Login")}
-          // style={{ flexDirection: "row" }}
-        >
-          <Text>Already have an Account</Text>
-          <Text>Login</Text>
-        </TouchableHighlight>
+        <>
+          <Image
+            source={Logo}
+            style={[styles.logo, { height: height * 0.3 }]}
+            resizeMode="contain"
+          />
+          <CustomInput
+            value={username}
+            setValue={setUsername}
+            placeholder="Enter your Email Address"
+            inputText="Email "
+            icon="face-man-profile"
+          />
+          <CustomInput
+            value={email}
+            setValue={setEmail}
+            placeholder="Enter your Email Address"
+            inputText="Email "
+            icon="email-outline"
+          />
+          <CustomInput
+            value={password}
+            setValue={setPassword}
+            placeholder="Enter your password"
+            secureTextEntry
+            inputText="Password"
+            icon="key-outline"
+          />
+          <CustomButtonBig title="Register" onPress={_handleRegister} />
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Login")}
+            style={{ flexDirection: "row" }}
+          >
+            <Text>Already have an Account</Text>
+            <Text>Login</Text>
+          </TouchableOpacity>
+        </>
       </View>
     </ScrollView>
   );

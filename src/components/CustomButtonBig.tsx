@@ -9,7 +9,7 @@ interface CustomBtnBigProps {
 }
 const CustomButtonBig = ({ title, onPress }: CustomBtnBigProps) => {
   return (
-    <Pressable onPress={onPress}>
+    <Pressable onPress={onPress} style={styles.container}>
       <LinearGradient style={styles.button} colors={["#CC23B6", "#B615DE"]}>
         <Text style={styles.btnText}>{title}</Text>
       </LinearGradient>
@@ -20,9 +20,13 @@ const CustomButtonBig = ({ title, onPress }: CustomBtnBigProps) => {
 export default CustomButtonBig;
 
 const styles = StyleSheet.create({
+  container: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
   button: {
     borderRadius: 10,
-    width: "80%",
+    width: 380,
     alignItems: "center",
     justifyContent: "center",
     height: 50,

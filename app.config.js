@@ -26,9 +26,11 @@ export default {
         foregroundImage: "./assets/images/adaptive-icon.png",
         backgroundColor: "#ffffff",
       },
+      package: "com.kolynz.bookmarkr",
     },
     web: {
-      favicon: "./assets/images/favicon.png",
+      // favicon: "./assets/images/favicon.png",
+      favicon: "./assets/images/icon.png",
     },
     extra: {
       firebaseApiKey: process.env.FIREBASE_API_KEY,

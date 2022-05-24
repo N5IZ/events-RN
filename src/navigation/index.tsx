@@ -57,7 +57,11 @@ function RootNavigator() {
   const user = useAppSelector((state) => state.user.user);
 
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       {user ? (
         <>
           <Stack.Screen
