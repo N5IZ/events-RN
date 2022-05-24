@@ -15,12 +15,13 @@ export default function useCachedResources() {
         // Load user
         const user = useAuthentication();
         console.log(`Loading ${user}`);
+
         // Load fonts
         await Font.loadAsync({
           ...FontAwesome.font,
-          "space-mono": require("../assets/fonts/SpaceMono-Regular.ttf"),
-          "jost-variable": require("../assets/fonts/Jost-VariableFont_wght.ttf"),
-          "jost-font": require("../assets/fonts/Jost-Regular.ttf"),
+          "space-mono": require("../../assets/fonts/SpaceMono-Regular.ttf"),
+          "jost-variable": require("../../assets/fonts/Jost-VariableFont_wght.ttf"),
+          "jost-font": require("../../assets/fonts/Jost-Regular.ttf"),
         });
       } catch (e) {
         // We might want to provide this error information to an error reporting service

@@ -15,14 +15,15 @@ import * as React from "react";
 import { ColorSchemeName, Pressable } from "react-native";
 
 import Colors from "../constants/Colors";
-import { useAppSelector } from "../hooks/reduxHooks";
 import useColorScheme from "../hooks/useColorScheme";
-import LoginScreen from "../screens/auth/LoginScreen";
-import RegisterScreen from "../screens/auth/RegisterScreen";
 import ModalScreen from "../screens/ModalScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import TabOneScreen from "../screens/TabOneScreen";
 import TabTwoScreen from "../screens/TabTwoScreen";
+import LoginScreen from "../screens/auth/LoginScreen";
+import RegisterScreen from "../screens/auth/RegisterScreen";
+import { useAppSelector } from "../hooks/reduxHooks";
+
 import {
   RootStackParamList,
   RootTabParamList,
@@ -51,14 +52,12 @@ export default function Navigation({
  * https://reactnavigation.org/docs/modal
  */
 const Stack = createNativeStackNavigator<RootStackParamList>();
+
 function RootNavigator() {
   const user = useAppSelector((state) => state.user.user);
+
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
+    <Stack.Navigator>
       {user ? (
         <>
           <Stack.Screen
@@ -126,7 +125,7 @@ function BottomTabNavigator() {
         component={TabTwoScreen}
         options={{
           title: "Tab Two",
-          tabBarIcon: ({ color }) => <TabBarIcon name="amazon" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
     </BottomTab.Navigator>

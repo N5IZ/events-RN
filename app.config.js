@@ -2,8 +2,8 @@ import "dotenv/config";
 
 export default {
   expo: {
-    name: "bookmarkr2",
-    slug: "bookmarkr2",
+    name: "bkmr3",
+    slug: "bkmr3",
     version: "1.0.0",
     orientation: "portrait",
     icon: "./assets/images/icon.png",

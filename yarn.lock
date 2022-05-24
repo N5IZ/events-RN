@@ -2543,6 +2543,13 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.5.tgz#5f19d2b85a98e9558036f6a3cacc8819420f05cf"
   integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
 
+"@types/react-dom@^18.0.5":
+  version "18.0.5"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.0.5.tgz#330b2d472c22f796e5531446939eacef8378444a"
+  integrity sha512-OWPWTUrY/NIrjsAPkAk1wW9LZeIjSvkXRhclsFO8CZcZGCOg2G0YZy4ft+rOyYxy8B7ui5iZzi9OkDebZ7/QSA==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-native@~0.66.13":
   version "0.66.18"
   resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.66.18.tgz#924fdbf413047e7ac2c18aead60142345814dede"
@@ -2550,19 +2557,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*":
+"@types/react@*", "@types/react@^18.0.9":
   version "18.0.9"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.9.tgz#d6712a38bd6cd83469603e7359511126f122e878"
   integrity sha512-9bjbg1hJHUm4De19L1cHiW0Jvx3geel6Qczhjd0qY5VKVE2X5+x77YxAepuCwVh4vrgZJdgEJw48zrhRIeF4Nw==
-  dependencies:
-    "@types/prop-types" "*"
-    "@types/scheduler" "*"
-    csstype "^3.0.2"
-
-"@types/react@~17.0.21":
-  version "17.0.45"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.45.tgz#9b3d5b661fd26365fefef0e766a1c6c30ccf7b3f"
-  integrity sha512-YfhQ22Lah2e3CHPsb93tRwIGNiSwkuz1/blk4e6QrWS0jQzCSNbGLtOEYhPg02W0yGTTmpajp7dCTbBAMN3qsg==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -3644,9 +3642,9 @@ copy-descriptor@^0.1.0:
   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
 
 core-js-compat@^3.21.0, core-js-compat@^3.22.1:
-  version "3.22.6"
-  resolved "https://registry.yarnpkg.com/core-js-compat/-/core-js-compat-3.22.6.tgz#2e7c7a703238c168883dbf55c24bbb67503cddcb"
-  integrity sha512-dQ/SxlHcuiywaPIoSUCU6Fx+Mk/H5TXENqd/ZJcK85ta0ZcQkbzHwblxPeL0hF5o+NsT2uK3q9ZOG5TboiVuWw==
+  version "3.22.7"
+  resolved "https://registry.yarnpkg.com/core-js-compat/-/core-js-compat-3.22.7.tgz#8359eb66ecbf726dd0cfced8e48d5e73f3224239"
+  integrity sha512-uI9DAQKKiiE/mclIC5g4AjRpio27g+VMRhe6rQoz+q4Wm4L6A/fJhiLtBw+sfOpDG9wZ3O0pxIw7GbfOlBgjOA==
   dependencies:
     browserslist "^4.20.3"
     semver "7.0.0"
@@ -3877,9 +3875,9 @@ define-property@^2.0.2:
     isobject "^3.0.1"
 
 del@^6.0.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/del/-/del-6.1.0.tgz#aa79a5b0a2a9ecc985c0a075e8ad9a5b23bf949c"
-  integrity sha512-OpcRktOt7G7HBfyxP0srBH4Djg4824EQORX8E1qvIhIzthNNArxxhrB/Mm7dRMiLi1nvFyUpDhzD2cTtbBhV8A==
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/del/-/del-6.1.1.tgz#3b70314f1ec0aa325c6b14eb36b95786671edb7a"
+  integrity sha512-ua8BhapfP0JUJKC/zV9yHHDW/rDoDxP4Zhn3AkA6/xT6gY7jYXJiaeyBZznYVujhZZET+UgcbZiQ7sN3WqcImg==
   dependencies:
     globby "^11.0.1"
     graceful-fs "^4.2.4"
@@ -4269,9 +4267,9 @@ expo-system-ui@~1.2.0:
     debug "^4.3.2"
 
 expo-web-browser@~10.2.0:
-  version "10.2.0"
-  resolved "https://registry.yarnpkg.com/expo-web-browser/-/expo-web-browser-10.2.0.tgz#e37450e5a0dd2eb1cf5ea5511589ed207da8aafe"
-  integrity sha512-Y8LCiktTUdPQVgO5BR6uHFU8FGu/8ysT2ynpO0WFeD4odX8JBX5JwQ9HokEa3XvRJNpefgQmXETDjzkMznXMvQ==
+  version "10.2.1"
+  resolved "https://registry.yarnpkg.com/expo-web-browser/-/expo-web-browser-10.2.1.tgz#4bd9214f7aefcd1af6ea26ae068a0e3e25a1e0bd"
+  integrity sha512-om34EL7OX5ouBM/hq2PrjHDLKmjVhAy+1H7YqRY6nS8dWsewnLFdLq4d8GPwWQBYb6kHKYVzwFRj+WLTfpAOBQ==
   dependencies:
     compare-urls "^2.0.0"
 
@@ -6795,9 +6793,9 @@ node-notifier@^8.0.0:
     which "^2.0.2"
 
 node-releases@^2.0.3:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.4.tgz#f38252370c43854dc48aa431c766c6c398f40476"
-  integrity sha512-gbMzqQtTtDz/00jQzZ21PQzdI9PyLYqUSvD0p3naOhX4odFji0ZxYdnVwPTxmSwkmxhcFImpozceidSG+AgoPQ==
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.5.tgz#280ed5bc3eba0d96ce44897d8aee478bfb3d9666"
+  integrity sha512-U9h1NLROZTq9uE1SNffn6WuPDg8icmi3ns4rEl/oTfIle4iLjTliCzgTsbaIFMq/Xn078/lfY/BL0GWZ+psK4Q==
 
 node-stream-zip@^1.9.1:
   version "1.15.0"

@@ -1,31 +1,30 @@
-import { View, Text } from "../../components/Themed";
-import React, { useState } from "react";
 import {
-  Button,
   Image,
   ScrollView,
   StyleSheet,
   TouchableHighlight,
   useWindowDimensions,
 } from "react-native";
+import { Text, View } from "../../components/Themed";
+import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { AuthStackParamList } from "../../types";
-import Logo from "../../assets/images/icon.png";
+import Logo from "../../../assets/images/icon.png";
 import CustomInput from "../../components/CustomInput";
 import CustomButtonBig from "../../components/CustomButtonBig";
 
-const LoginScreen = () => {
-  const [accessToken, setAccessToken] = useState<String>();
-  const [email, setEmail] = useState<string | undefined>();
+const RegisterScreen = () => {
   const [username, setUsername] = useState<string | undefined>();
+  const [email, setEmail] = useState<string | undefined>();
   const [password, setPassword] = useState<string | undefined>();
   const { height } = useWindowDimensions();
   const navigation =
     useNavigation<NativeStackNavigationProp<AuthStackParamList>>();
 
-  const _handleLogin = () => {};
-
+  const _handleRegister = () => {
+    // GoogleAuthProvider.
+  };
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -33,6 +32,13 @@ const LoginScreen = () => {
           source={Logo}
           style={[styles.logo, { height: height * 0.3 }]}
           resizeMode="contain"
+        />
+        <CustomInput
+          value={username}
+          setValue={setUsername}
+          placeholder="Enter your Email Address"
+          inputText="Email "
+          icon="face-man-profile"
         />
         <CustomInput
           value={email}
@@ -49,18 +55,20 @@ const LoginScreen = () => {
           inputText="Password"
           icon="key-outline"
         />
-        <CustomButtonBig title="Login" onPress={_handleLogin} />
+        <CustomButtonBig title="Login" onPress={_handleRegister} />
         <TouchableHighlight
-          onPress={() => navigation.navigate("Register")}
+          onPress={() => navigation.navigate("Login")}
           // style={{ flexDirection: "row" }}
         >
-          <Text>Dont have an Account</Text>
-          <Text>Register</Text>
+          <Text>Already have an Account</Text>
+          <Text>Login</Text>
         </TouchableHighlight>
       </View>
     </ScrollView>
   );
 };
+
+export default RegisterScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -85,5 +93,3 @@ const styles = StyleSheet.create({
     maxHeight: 200,
   },
 });
-
-export default LoginScreen;
