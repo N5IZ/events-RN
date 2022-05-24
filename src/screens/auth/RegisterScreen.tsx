@@ -14,6 +14,8 @@ import { AuthStackParamList } from "../../types";
 import Logo from "../../../assets/images/icon.png";
 import CustomInput from "../../components/CustomInput";
 import CustomButtonBig from "../../components/CustomButtonBig";
+import { auth } from "../../firebase/firebase.config";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const RegisterScreen = () => {
   const [username, setUsername] = useState<string | undefined>();
@@ -23,8 +25,14 @@ const RegisterScreen = () => {
   const navigation =
     useNavigation<NativeStackNavigationProp<AuthStackParamList>>();
 
-  const _handleRegister = () => {
-    // GoogleSignIn.
+  const _handleRegister = async () => {
+    await createUserWithEmailAndPassword(
+      auth,
+      email as string,
+      password as string
+    )
+      .then(() => navigation.navigate("Login"))
+      .catch((error) => alert(error));
   };
   return (
     <ScrollView>
@@ -38,8 +46,8 @@ const RegisterScreen = () => {
           <CustomInput
             value={username}
             setValue={setUsername}
-            placeholder="Enter your Email Address"
-            inputText="Email "
+            placeholder="Enter your username"
+            inputText="Username "
             icon="face-man-profile"
           />
           <CustomInput
@@ -79,7 +87,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     paddingBottom: "20%",
-    paddingTop: "10%",
+    paddingTop: "3%",
   },
   title: {
     fontSize: 20,

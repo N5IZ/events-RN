@@ -42,9 +42,10 @@ export default CustomInput;
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
+    // width: "100%",
+    width: 380,
     marginBottom: 20,
-    paddingHorizontal: 50,
+    // paddingHorizontal: 50,
   },
   inputContainer: {
     backgroundColor: "#171717",
@@ -58,12 +59,14 @@ const styles = StyleSheet.create({
   },
   inputText: {
     fontSize: 18,
+
     marginBottom: 10,
   },
   input: {
     width: "100%",
     height: 50,
-    borderColor: "white",
+    // borderColor: "white",
     marginLeft: 10,
+    color: "white",
   },
 });

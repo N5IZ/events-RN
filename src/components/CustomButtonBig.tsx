@@ -10,7 +10,7 @@ interface CustomBtnBigProps {
 const CustomButtonBig = ({ title, onPress }: CustomBtnBigProps) => {
   return (
     <Pressable onPress={onPress} style={styles.container}>
-      <LinearGradient style={styles.button} colors={["#CC23B6", "#B615DE"]}>
+      <LinearGradient style={styles.button} colors={["#9A39FB", "#B615DE"]}>
         <Text style={styles.btnText}>{title}</Text>
       </LinearGradient>
     </Pressable>

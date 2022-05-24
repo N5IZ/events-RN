@@ -14,6 +14,10 @@ import { AuthStackParamList } from "../../types";
 import Logo from "../../../assets/images/icon.png";
 import CustomInput from "../../components/CustomInput";
 import CustomButtonBig from "../../components/CustomButtonBig";
+import { auth } from "../../firebase/firebase.config";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useAppDispatch } from "../../hooks/reduxHooks";
+import { login } from "../../redux/slices/userSlice";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState<string | undefined>();
@@ -22,7 +26,13 @@ const LoginScreen = () => {
   const navigation =
     useNavigation<NativeStackNavigationProp<AuthStackParamList>>();
 
-  const _handleLogin = () => {};
+  const dispatch = useAppDispatch();
+
+  const _handleLogin = async () => {
+    await signInWithEmailAndPassword(auth, email as string, password as string)
+      .then((user) => dispatch(login(user)))
+      .catch((err) => alert(err));
+  };
 
   return (
     <ScrollView>
@@ -68,7 +78,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     paddingBottom: "20%",
-    paddingTop: "10%",
+    // paddingTop: "10%",
+    paddingTop: "3%",
   },
   title: {
     fontSize: 20,
