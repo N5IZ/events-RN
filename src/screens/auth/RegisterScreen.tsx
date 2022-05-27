@@ -68,10 +68,10 @@ const RegisterScreen = () => {
           <CustomButtonBig title="Register" onPress={_handleRegister} />
           <TouchableOpacity
             onPress={() => navigation.navigate("Login")}
-            style={{ flexDirection: "row" }}
+            style={{ flexDirection: "row", justifyContent: "space-between" }}
           >
             <Text>Already have an Account</Text>
-            <Text>Login</Text>
+            <Text style={{ marginLeft: 6, fontWeight: "bold" }}>Login</Text>
           </TouchableOpacity>
         </>
       </View>

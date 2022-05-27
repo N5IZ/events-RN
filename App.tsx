@@ -1,4 +1,5 @@
 import { StatusBar } from "expo-status-bar";
+import { ActivityIndicator } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { Provider } from "react-redux";
 
@@ -10,9 +11,9 @@ import { store } from "./src/redux/store";
 export default function App() {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
-
+  // TODO: Persist user state
   if (!isLoadingComplete) {
-    return null;
+    return <ActivityIndicator size="large" color="#00ff00" />;
   } else {
     return (
       <Provider store={store}>

@@ -2,6 +2,7 @@
 import { FirebaseApp, initializeApp } from "firebase/app";
 import { getAuth, Auth } from "firebase/auth";
 import Constants from "expo-constants";
+import { Firestore, getFirestore } from "firebase/firestore";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -16,5 +17,6 @@ const firebaseConfig = {
 // Initialize Firebase
 let app: FirebaseApp = initializeApp(firebaseConfig);
 export let auth: Auth = getAuth(app);
+export let db: Firestore = getFirestore(app);
 
 export default app;
