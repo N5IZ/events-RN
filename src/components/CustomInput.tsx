@@ -9,7 +9,7 @@ interface CustomInputProps extends TextInputProps {
     | ((text: string) => void)
     | undefined;
   inputText: String;
-  icon: any;
+  icon: React.ComponentProps<typeof MaterialCommunityIcons>["name"];
 }
 
 const CustomInput = ({
