@@ -5,8 +5,6 @@ import { useAppDispatch, useAppSelector } from "./reduxHooks";
 import { logout, login } from "../redux/slices/userSlice";
 
 export function useAuthentication() {
-  // const [user, setUser] = React.useState<User>();
-
   const user = useAppSelector((state) => state.user.user);
   const dispatch = useAppDispatch();
   const logout = useCallback(() => dispatch({ type: "logout" }), []);

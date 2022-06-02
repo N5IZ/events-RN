@@ -54,7 +54,9 @@ export default function Navigation({
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
-  const user = useAppSelector((state) => state.user.user);
+  // const user = useAppSelector((state) => state.user.user);
+  const user = true;
+  // Todo change back to state
 
   return (
     <Stack.Navigator

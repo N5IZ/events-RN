@@ -14,6 +14,7 @@ export default function useCachedResources() {
         SplashScreen.preventAutoHideAsync();
         // Load user
         const user = useAuthentication();
+
         console.log(`Loading ${user}`);
 
         // Load fonts
