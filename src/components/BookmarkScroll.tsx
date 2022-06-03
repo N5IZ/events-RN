@@ -1,46 +1,48 @@
 import { Text, View } from "./Themed";
-import { FlatList, ScrollView, StyleSheet } from "react-native";
+import { FlatList, Image, ScrollView, StyleSheet } from "react-native";
 import React from "react";
-import { categories } from "../dummyData/data";
+import { bookmarks } from "../dummyData/data";
 
 type Props = {};
 
-type category = {
-  category_name: string;
+type bookmark = {
+  bookmark_name: string;
   img_url: string;
+  category_id: string;
 };
 
-type CategoryItemProps = {
-  item: category;
+type BookmarkItemProps = {
+  item: bookmark;
 };
 
-const _CategoryItem = ({ item }: CategoryItemProps) => {
+const _BookmarkItem = ({ item }: BookmarkItemProps) => {
   return (
     <View style={styles.card}>
-      <Text style={styles.cardText}>{item.category_name}</Text>
+      <Image source={{ uri: item.img_url }} />
+      <Text style={styles.cardText}>{item.bookmark_name}</Text>
+      <Text style={styles.cardText}>{item.category_id}</Text>
     </View>
   );
 };
 
-const CategoryScroll = (props: Props) => {
+const BookmarkerScroll = (props: Props) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text>Categories</Text>
+        <Text>Bookmarks</Text>
         <Text style={{ color: "#BF3BEF" }}>View More</Text>
       </View>
-      <ScrollView horizontal={true}>
-        <FlatList
-          style={styles.cards}
-          data={categories}
-          renderItem={({ item }) => <_CategoryItem item={item} />}
-        />
-      </ScrollView>
+      <FlatList
+        style={styles.cards}
+        data={bookmarks}
+        numColumns={2}
+        renderItem={({ item }) => <_BookmarkItem item={item} />}
+      />
     </View>
   );
 };
 
-export default CategoryScroll;
+export default BookmarkerScroll;
 
 const styles = StyleSheet.create({
   container: {
