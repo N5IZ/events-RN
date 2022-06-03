@@ -18,7 +18,7 @@ type BookmarkItemProps = {
 const _BookmarkItem = ({ item }: BookmarkItemProps) => {
   return (
     <View style={styles.card}>
-      <Image source={{ uri: item.img_url }} />
+      <Image style={styles.cardImage} source={{ uri: item.img_url }} />
       <Text style={styles.cardText}>{item.bookmark_name}</Text>
       <Text style={styles.cardText}>{item.category_id}</Text>
     </View>
@@ -48,14 +48,31 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     paddingHorizontal: 20,
+    justifyContent: "center",
+    alignItems: "center",
   },
   header: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
     width: "100%",
+    marginBottom: 20,
   },
   cards: {},
-  card: {},
-  cardText: {},
+  card: {
+    marginRight: 20,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  cardImage: {
+    width: "200px",
+    height: "300px",
+    borderRadius: 5,
+  },
+
+  cardText: {
+    position: "relative",
+    top: -25,
+    fontWeight: "500",
+  },
 });
