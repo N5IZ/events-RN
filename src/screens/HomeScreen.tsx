@@ -2,6 +2,7 @@ import { ScrollView, StyleSheet } from "react-native";
 import BookmarkerScroll from "../components/BookmarkScroll";
 import CategoryScroll from "../components/CategoryScroll";
 import { Text, View } from "../components/Themed";
+import TopBarGreeter from "../components/TopBarGreeter";
 import { RootTabScreenProps } from "../types";
 
 export default function TabOneScreen({
@@ -10,9 +11,7 @@ export default function TabOneScreen({
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Text style={styles.title}>Welcome To</Text>
-        <Text style={styles.title}>Boomarkr</Text>
-
+        <TopBarGreeter />
         <CategoryScroll />
 
         <View
@@ -32,10 +31,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
+
   separator: {
     marginVertical: 30,
     height: 1,
