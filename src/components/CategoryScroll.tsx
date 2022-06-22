@@ -1,5 +1,11 @@
 import { Text, View } from "./Themed";
-import { FlatList, Image, ScrollView, StyleSheet } from "react-native";
+import {
+  FlatList,
+  Image,
+  ScrollView,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 import React from "react";
 import { categories } from "../dummyData/data";
 
@@ -16,15 +22,17 @@ type CategoryItemProps = {
 
 const _CategoryItem = ({ category }: CategoryItemProps) => {
   return (
-    <View style={styles.card}>
-      <Image
-        style={styles.cardImage}
-        source={{
-          uri: category.img_url,
-        }}
-      />
-      <Text style={styles.cardText}>{category.category_name}</Text>
-    </View>
+    <TouchableOpacity>
+      <View style={styles.card}>
+        <Image
+          style={styles.cardImage}
+          source={{
+            uri: category.img_url,
+          }}
+        />
+        <Text style={styles.cardText}>{category.category_name}</Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 
