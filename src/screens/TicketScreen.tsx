@@ -3,7 +3,7 @@ import React from 'react';
 
 type Props = {};
 
-const TicketsScreen = (props: Props) => {
+const TicketScreen = (props: Props) => {
   return (
     <View>
       <Text>TicketsScreen</Text>
@@ -11,6 +11,6 @@ const TicketsScreen = (props: Props) => {
   );
 };
 
-export default TicketsScreen;
+export default TicketScreen;
 
 const styles = StyleSheet.create({});
