@@ -1,4 +1,4 @@
-# Bookmarkr App
+# Events App
 
 ![bookmarkr Logo](src/assets/images/icon.png)
 
