@@ -7,6 +7,7 @@ import { Pressable } from 'react-native';
 import { CompositeScreenProps } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from './RootTabNavigator';
+import { FontAwesome } from '../Icon';
 
 export type RootTabParamList = {
     Home: undefined;
@@ -45,9 +46,10 @@ function BottomTabNavigator() {
                           })}>
                           <FontAwesome
                               name="info-circle"
-                              size={25}
+                              size="small"
                               color={"color goes here"}
-                              style={{ marginRight: 15 }} />
+                            //   style={{ marginRight: 15 }} 
+                            />
                       </Pressable>
                   ),
               })} /><Tab.Screen
@@ -59,13 +61,14 @@ function BottomTabNavigator() {
               }} />
     </ Tab.Navigator>
 }
+
 export default BottomTabNavigator;
-/**
- * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
- */
+
 function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>['name'];
   color: string;
 }) {
-  return <FontAwesome size={30} style={{marginBottom: -3}} {...props} />;
+  return <FontAwesome size="small" 
+//   style={{marginBottom: -3}}
+   {...props} />;
 }
