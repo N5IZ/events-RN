@@ -2,7 +2,8 @@ https://youtu.be/hmZm_jPvWWM
 
 expo install expo-web-browser expo-auth-session expo-random
 
-https://blog.logrocket.com/integrating-firebase-authentication-expo-mobile-app/
+- [Firebase](https://blog.logrocket.com/integrating-firebase-authentication-expo-mobile-app/)
+- [Add Icon pack](https://blog.logrocket.com/react-native-vector-icons-fonts-react-native-app-ui/)
 
 ---
 
