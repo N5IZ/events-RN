@@ -5,7 +5,6 @@ https://youtu.be/hmZm_jPvWWM
 - [search icons](https://oblador.github.io/react-native-vector-icons/)
 
 ---
-
 # Inspiration
 
 - https://dribbble.com/shots/14923778-Festivals-Events-App
