@@ -1,5 +1,5 @@
 import React from 'react';
-import MIcon from 'react-native-vector-icons/FontAwesome';
+import MIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 MIcon.loadFont();
 
@@ -11,6 +11,7 @@ export interface IconProps {
   size: IconSizeProps['iconSizes'];
   name: string;
   color: string;
+  style?: any;
 }
 
 export const IconSizes = {
@@ -20,6 +21,8 @@ export const IconSizes = {
   extraLarge: 27,
 };
 
-export const FontAwesome = ({size, name, color}: IconProps) => (
-  <MIcon name={name} size={IconSizes[size]} color={color} />
+const Icon = ({size, name, color, style}: IconProps) => (
+  <MIcon name={name} size={IconSizes[size]} color={color} style={style} />
 );
+
+export default Icon;

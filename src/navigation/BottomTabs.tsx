@@ -10,7 +10,7 @@ import {Pressable, StyleSheet} from 'react-native';
 import {CompositeScreenProps} from '@react-navigation/native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from './RootTabNavigator';
-import {FontAwesome} from '../Icon';
+import Icon from '../Icon';
 
 export type RootTabParamList = {
   Home: undefined;
@@ -48,15 +48,24 @@ function BottomTabNavigator() {
         component={Homescreen}
         options={({navigation}: RootTabScreenProps<'Home'>) => ({
           title: 'Home',
-          tabBarIcon: ({color}) => <TabBarIcon name="home" color={color} />,
+          tabBarIcon: ({focused, color}) => (
+            <TabBarIcon
+              name="home-variant-outline"
+              color={color}
+              // eslint-disable-next-line react-native/no-inline-styles
+              style={{
+                tintColor: focused ? '#e32f45' : '#748c94',
+              }}
+            />
+          ),
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate('Home')}
               style={({pressed}) => ({
                 opacity: pressed ? 0.5 : 1,
               })}>
-              <FontAwesome
-                name="info-circle"
+              <Icon
+                name="info"
                 size="small"
                 color={'color goes here'}
                 //   style={{ marginRight: 15 }}
@@ -70,7 +79,9 @@ function BottomTabNavigator() {
         component={TicketScreen}
         options={{
           title: 'Tickets',
-          tabBarIcon: ({color}) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({color}) => (
+            <TabBarIcon name="ticket-confirmation-outline" color={color} />
+          ),
         }}
       />
     </Tab.Navigator>
@@ -80,10 +91,18 @@ function BottomTabNavigator() {
 export default BottomTabNavigator;
 
 function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
+  name: React.ComponentProps<typeof Icon>['name'];
   color: string;
+  style?: any;
 }) {
-  return <FontAwesome size="small" name={props.name} color={props.color} />;
+  return (
+    <Icon
+      size="medium"
+      name={props.name}
+      color={props.color}
+      style={props.style}
+    />
+  );
 }
 
 const styles = StyleSheet.create({
@@ -97,4 +116,5 @@ const styles = StyleSheet.create({
     shadowRadius: 3.5,
     elevation: 5,
   },
+  tabBarIcon: {},
 });
