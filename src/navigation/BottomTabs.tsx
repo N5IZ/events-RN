@@ -6,7 +6,7 @@ import {
 import Homescreen from '../screens/Homescreen';
 import TicketScreen from '../screens/TicketScreen';
 
-import {Pressable} from 'react-native';
+import {Pressable, StyleSheet} from 'react-native';
 import {CompositeScreenProps} from '@react-navigation/native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from './RootTabNavigator';
@@ -29,16 +29,26 @@ function BottomTabNavigator() {
   return (
     <Tab.Navigator
       initialRouteName="Home"
-      // screenOptions={{
-      //     tabBarActiveTintColor: Colors[colorScheme].tint,
-      //   }}
-    >
+      screenOptions={{
+        tabBarActiveTintColor: 'red',
+        tabBarShowLabel: false,
+        tabBarStyle: {
+          position: 'absolute',
+          bottom: 25,
+          left: 20,
+          right: 20,
+          borderRadius: 15,
+          height: 60,
+          // elevation: 1,
+          ...styles.shadow,
+        },
+      }}>
       <Tab.Screen
         name="Home"
         component={Homescreen}
         options={({navigation}: RootTabScreenProps<'Home'>) => ({
           title: 'Home',
-          tabBarIcon: ({color}) => <TabBarIcon name="h" color={color} />,
+          tabBarIcon: ({color}) => <TabBarIcon name="home" color={color} />,
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate('Home')}
@@ -71,8 +81,20 @@ export default BottomTabNavigator;
 
 function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>['name'];
-  //   name: string;
   color: string;
 }) {
   return <FontAwesome size="small" name={props.name} color={props.color} />;
 }
+
+const styles = StyleSheet.create({
+  shadow: {
+    shadowColor: '#7F5DF0',
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.5,
+    elevation: 5,
+  },
+});

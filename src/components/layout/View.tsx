@@ -1,4 +1,4 @@
-import {StyleSheet,  View as RNView} from 'react-native';
+import {StyleSheet, View as RNView} from 'react-native';
 import React from 'react';
 
 type Props = {
