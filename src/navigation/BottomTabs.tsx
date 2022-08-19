@@ -97,7 +97,7 @@ function TabBarIcon(props: {
 }) {
   return (
     <Icon
-      size="medium"
+      size="large"
       name={props.name}
       color={props.color}
       style={props.style}

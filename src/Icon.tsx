@@ -9,7 +9,7 @@ type IconSizeProps = {
 
 export interface IconProps {
   size: IconSizeProps['iconSizes'];
-  name: string;
+  name: React.ComponentProps<typeof MIcon>['name'];
   color: string;
   style?: any;
 }
