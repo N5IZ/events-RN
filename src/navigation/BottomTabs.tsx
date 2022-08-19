@@ -6,7 +6,7 @@ import {
 import Homescreen from '../screens/Homescreen';
 import TicketScreen from '../screens/TicketScreen';
 
-import {Pressable, StyleSheet} from 'react-native';
+import {Pressable, StyleSheet, View} from 'react-native';
 import {CompositeScreenProps} from '@react-navigation/native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from './RootTabNavigator';
@@ -15,6 +15,8 @@ import Icon from '../Icon';
 export type RootTabParamList = {
   Home: undefined;
   Tickets: undefined;
+  Location: undefined;
+  Profile: undefined;
 };
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
@@ -30,7 +32,7 @@ function BottomTabNavigator() {
     <Tab.Navigator
       initialRouteName="Home"
       screenOptions={{
-        tabBarActiveTintColor: 'red',
+        tabBarActiveTintColor: '#FEFEFF',
         tabBarShowLabel: false,
         tabBarStyle: {
           position: 'absolute',
@@ -39,6 +41,7 @@ function BottomTabNavigator() {
           right: 20,
           borderRadius: 15,
           height: 60,
+          backgroundColor: '#2F3B49',
           // elevation: 1,
           ...styles.shadow,
         },
@@ -48,15 +51,10 @@ function BottomTabNavigator() {
         component={Homescreen}
         options={({navigation}: RootTabScreenProps<'Home'>) => ({
           title: 'Home',
-          tabBarIcon: ({focused, color}) => (
-            <TabBarIcon
-              name="home-variant-outline"
-              color={color}
-              // eslint-disable-next-line react-native/no-inline-styles
-              style={{
-                tintColor: focused ? '#e32f45' : '#748c94',
-              }}
-            />
+
+          tabBarIcon: ({color}) => (
+            <TabBarIcon name="home-variant-outline" color={color} />
+            // TODO: Addd a line at the bottom and add focused prop
           ),
           headerRight: () => (
             <Pressable
@@ -82,6 +80,24 @@ function BottomTabNavigator() {
           tabBarIcon: ({color}) => (
             <TabBarIcon name="ticket-confirmation-outline" color={color} />
           ),
+        }}
+      />
+      <Tab.Screen
+        name="Location"
+        component={TicketScreen}
+        options={{
+          title: 'Location',
+          tabBarIcon: ({color}) => (
+            <TabBarIcon name="location-pin" color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={TicketScreen}
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({color}) => <TabBarIcon name="user" color={color} />,
         }}
       />
     </Tab.Navigator>
